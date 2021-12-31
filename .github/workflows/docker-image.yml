@@ -38,9 +38,7 @@ jobs:
         uses: docker/metadata-action@v3
         with:
           images: lexferramirez/dashpira
-          tag-custom: latest
-          tag-semver: |
-            {{raw}}
+          tags: test
             
       - name: Build and push Docker image
         uses: docker/build-push-action@v2
