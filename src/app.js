@@ -20,6 +20,10 @@ app.post('/tasks', (req, res) => {
     res.json({ title, description, id: v4() })
 })
 
+app.get('/test', (req, res) => {
+    res.send('Test lexfer')
+})
+
 
 
 export default app;
