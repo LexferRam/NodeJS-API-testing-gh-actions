@@ -21,7 +21,7 @@ app.post('/tasks', (req, res) => {
 })
 
 app.get('/test', (req, res) => {
-    res.send('Test lexfer')
+    res.send('Test lexfer, change endpoint')
 })
 
 
