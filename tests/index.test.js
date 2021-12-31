@@ -58,3 +58,10 @@ describe('POST /tasks', () => {
     })
 
 })
+
+describe('GET /test', () => {
+    test('should respond 400 status code', async () => {
+        const response = await request(app).get('/test').send()
+        expect(response.statusCode).toBe(400)
+    })
+})
