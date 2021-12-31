@@ -19,3 +19,23 @@ set NODE_OPTIONS=--experimental-vm-modules && npx jest
     "test": "NODE_OPTIONS=--experimental-vm-modules jest"
   },
 ```
+
+## GitHub Actions
+
+Is a platform to atomate developer workflows, CI/CD is one of many workflows.
+When something happens(github events) in or to repository automatic actions are exxecuted in response.
+
+## How Github Actions automate these workflows
+
+1. Listen to Event(PR, PR merged, issue created)
+2. Trigger workflow ==> each small task that triggers in an event is going to a separate action
+
+## Most common workflow for your repository would be CI/CD pipeline
+
+commit code ==> test ==> build ==> push ==> deploy
+
+## Just another CI/CD tool?
+
+* use same tool instead of third-party integration
+* setup the pipeline is easy
+* tool for developers
