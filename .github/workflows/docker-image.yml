@@ -38,7 +38,7 @@ jobs:
         uses: docker/metadata-action@v3
         with:
           images: lexferramirez/dashpira
-          tags: 'v?[0-9]+.[0-9]+.[0-9]+'
+          tags: ${{ steps.meta.outputs.tags }}
             
       - name: Build and push Docker image
         uses: docker/build-push-action@v2
