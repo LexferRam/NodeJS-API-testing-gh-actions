@@ -39,3 +39,5 @@ commit code ==> test ==> build ==> push ==> deploy
 * use same tool instead of third-party integration
 * setup the pipeline is easy
 * tool for developers
+
+**NOTA:** El pipeline creado aqui ejecuta las siguientes tareas: realiza los tests, compila y genera la imagen de docker y finalmente sube la imagen al registry de GitHub contaainer registry
