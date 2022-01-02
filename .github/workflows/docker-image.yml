@@ -40,13 +40,30 @@ jobs:
           images: lexferramirez/dashpira
           #tags: ${{ steps.meta.outputs.labels }}
             
+      #- name: Build and push Docker image
+        #uses: docker/build-push-action@v2
+        #with:
+          #context: .
+          #push: true
+          #tags: ${{ steps.meta.outputs.tags }}
+          #labels: ${{ steps.meta.outputs.labels }}
       - name: Build and push Docker image
-        uses: docker/build-push-action@v2
+        uses: actions/checkout@v2
+        
+      - name: setup-node@v2
+        uses: actions/setup-node@v2
         with:
-          context: .
-          push: true
-          tags: ${{ steps.meta.outputs.tags }}
-          labels: ${{ steps.meta.outputs.labels }}
+          node-version: 16
+          registry-url: https://npm.pkg.github.com/lexferram/nodejs-api-testing-gh-actions
+          
+      - name: run ci   
+        run: npm ci
+        
+      - name: Publish to 
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
 
   # publish:
 
